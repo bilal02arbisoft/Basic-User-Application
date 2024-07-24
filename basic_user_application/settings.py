@@ -31,7 +31,7 @@ AUTH_USER_MODEL = 'users.CustomUser'
 ALLOWED_HOSTS = []
 LOGIN_REDIRECT_URL = 'welcome'
 LOGIN_URL = 'login'
-SESSION_COOKIE_AGE = 10  # in seconds
+
 
 # Application definition
 

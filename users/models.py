@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 from .managers import CustomUserManager
 from django.conf import settings
+from django.utils import timezone
 
 
 # Create your models here.
@@ -30,9 +31,17 @@ class Profile(models.Model):
     bio = models.TextField(max_length=500, blank=True)
     location = models.CharField(max_length=30, blank=True)
     birth_date = models.DateTimeField(null=True, blank=True)
+    full_name = models.CharField(max_length=255, blank=True)
+    last_updated = models.DateTimeField(null=True, blank=True)
 
     def __str__(self):
 
         return self.user.email
+
+    def save(self, *args, **kwargs):
+
+        self.full_name = f"{self.user.first_name} {self.user.last_name}"
+        self.last_updated = timezone.now()
+        super(Profile, self).save(*args, **kwargs)
 
 

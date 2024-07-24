@@ -12,7 +12,9 @@ def create_user_profile(sender, instance, created, **kwargs):
 
 
 @receiver(post_save, sender=CustomUser)
-def save_user_profile(sender, instance, **kwargs):
+def save_user_profile(sender, instance, created, **kwargs):
 
-    instance.profile.save()
+    if not created:
+
+        instance.profile.save()
 

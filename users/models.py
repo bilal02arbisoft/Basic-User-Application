@@ -40,7 +40,7 @@ class Profile(models.Model):
 
     def save(self, *args, **kwargs):
 
-        self.full_name = f"{self.user.first_name} {self.user.last_name}"
+        self.full_name = f'{self.user.first_name} {self.user.last_name}'
         self.last_updated = timezone.now()
         super(Profile, self).save(*args, **kwargs)
 

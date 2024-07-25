@@ -24,7 +24,6 @@ class Command(BaseCommand):
             self.stdout.write(self.style.SUCCESS('No records to convert'))
 
             return
-
         for record in records:
             if to_utc:
 

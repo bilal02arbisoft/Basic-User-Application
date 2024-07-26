@@ -5,9 +5,6 @@ from django.conf import settings
 from django.utils import timezone
 
 
-# Create your models here.
-
-
 class CustomUser(AbstractBaseUser, PermissionsMixin):
 
     email = models.EmailField(unique=True)
@@ -43,5 +40,14 @@ class Profile(models.Model):
         self.full_name = f'{self.user.first_name} {self.user.last_name}'
         self.last_updated = timezone.now()
         super(Profile, self).save(*args, **kwargs)
+
+
+class DateTimeModel(models.Model):
+
+    datetime = models.DateTimeField()
+    is_utc = models.BooleanField(default=False)
+    count = models.IntegerField(default=0)
+
+
 
 

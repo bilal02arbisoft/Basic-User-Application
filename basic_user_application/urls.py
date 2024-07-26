@@ -16,7 +16,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.contrib.auth import views as auth_views
 from users.views import SignUpView, ProfileEditView, CustomPasswordChangeView, CustomLoginView, CustomLogoutView
 from users.views import CustomPasswordChangeDoneView, profile_details_view, welcome_view
 

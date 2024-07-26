@@ -1,5 +1,5 @@
 from django.shortcuts import redirect
-from django.urls import reverse, resolve
+from django.urls import reverse
 
 
 class UserAuthMiddleware:

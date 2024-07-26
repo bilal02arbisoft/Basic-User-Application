@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from users.models import CustomUser,DateTimeModel
+from users.models import CustomUser, DateTimeModel
 
 
 class CustomUserAdmin(UserAdmin):

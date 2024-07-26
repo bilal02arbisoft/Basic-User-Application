@@ -1,4 +1,4 @@
-from datetime import datetime, timedelta
+from datetime import datetime
 from django.core.management.base import BaseCommand
 from users.models import CustomUser, DateTimeModel
 from faker import Faker
@@ -10,7 +10,7 @@ class Command(BaseCommand):
     fake = Faker()
 
     def handle(self, *args, **kwargs):
-        self.insert_dummy_users()
+        # self.insert_dummy_users()
         self.insert_dummy_pst_datetime()
 
     def insert_dummy_users(self):

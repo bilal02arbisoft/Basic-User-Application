@@ -27,7 +27,10 @@ SECRET_KEY = 'django-insecure-w5h3w5m-tgqa#octxs(mm&up_#$u&m6@2uix31#s-)6^8#bnj6
 
 USE_TZ = False
 TIME_ZONE = 'Asia/Karachi'
+<<<<<<< HEAD
 
+=======
+>>>>>>> b576f95 (used count field in datetime model and remove statemodel)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 AUTH_USER_MODEL = 'users.CustomUser'

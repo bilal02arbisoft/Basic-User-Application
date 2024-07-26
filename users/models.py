@@ -46,10 +46,8 @@ class DateTimeModel(models.Model):
 
     datetime = models.DateTimeField()
     is_utc = models.BooleanField(default=False)
+    count = models.IntegerField(default=0)
 
 
-class ConversionState(models.Model):
-
-    to_utc = models.BooleanField(default=True)
 
 

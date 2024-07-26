@@ -10,7 +10,6 @@ class Command(BaseCommand):
     fake = Faker()
 
     def handle(self, *args, **kwargs):
-
         self.insert_dummy_users()
         self.insert_dummy_pst_datetime()
 
@@ -25,9 +24,10 @@ class Command(BaseCommand):
             self.stdout.write(self.style.SUCCESS(f'Successfully created user {email}'))
 
     def insert_dummy_pst_datetime(self):
+        pst_timezone = pytz.timezone('America/Los_Angeles')
         for i in range(100):
-            pst_timezone = pytz.timezone('America/Los_Angeles')
             current_pst_time = datetime.now(pst_timezone)
-            DateTimeModel.objects.create(datetime=current_pst_time)
-            self.stdout.write(self.style.SUCCESS(f'Successfully created PST datetime: {current_pst_time}'))
+            naive_pst_time = current_pst_time.replace(tzinfo=None)
+            DateTimeModel.objects.create(datetime=naive_pst_time)
+            self.stdout.write(self.style.SUCCESS(f'Successfully created PST datetime: {naive_pst_time}'))
         self.stdout.write(self.style.SUCCESS('Completed inserting dummy PST datetime'))

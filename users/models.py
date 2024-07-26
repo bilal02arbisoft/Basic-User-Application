@@ -43,6 +43,13 @@ class Profile(models.Model):
 
 
 class DateTimeModel(models.Model):
+
     datetime = models.DateTimeField()
+    is_utc = models.BooleanField(default=False)
+
+
+class ConversionState(models.Model):
+
+    to_utc = models.BooleanField(default=True)
 
 

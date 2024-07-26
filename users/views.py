@@ -1,12 +1,9 @@
 from django.shortcuts import render, redirect
-
-# Create your views here.
-
 from django.contrib.auth import login
-from django.contrib.auth.views import LoginView, LogoutView, PasswordChangeView,PasswordChangeDoneView
+from django.contrib.auth.views import LoginView, LogoutView, PasswordChangeView, PasswordChangeDoneView
 from django.urls import reverse_lazy
 from django.views import View
-from .forms import CustomUserCreationForm, EditProfileForm
+from users.forms import CustomUserCreationForm, EditProfileForm
 
 
 class SignUpView(View):

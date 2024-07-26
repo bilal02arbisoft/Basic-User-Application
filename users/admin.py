@@ -1,7 +1,6 @@
-
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from users.models import CustomUser
+from users.models import CustomUser,DateTimeModel
 
 
 class CustomUserAdmin(UserAdmin):
@@ -25,4 +24,17 @@ class CustomUserAdmin(UserAdmin):
     ordering = ('email',)
 
 
+class DateTimeModelAdmin(admin.ModelAdmin):
+
+    list_display = ('formatted_datetime',)
+
+    def formatted_datetime(self, obj):
+
+        return obj.datetime
+
+    formatted_datetime.short_description = 'DateTime'
+
+
 admin.site.register(CustomUser, CustomUserAdmin)
+admin.site.register(DateTimeModel, DateTimeModelAdmin)
+

@@ -1,0 +1,17 @@
+<!-- myapp/templates/profile_detail.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile Details</title>
+</head>
+<body>
+    <h2>Profile Details</h2>
+    <p><strong>Email:</strong> {{ profile.user.email }}</p>
+    <p><strong> Name:</strong> {{ profile.full_name }}</p>
+    <p><strong>Bio:</strong> {{ profile.bio }}</p>
+    <p><strong>Location:</strong> {{ profile.location }}</p>
+    <p><strong>Birth Date:</strong> {{ profile.birth_date }}</p>
+    <p><strong>Last Updated:</strong> {{ profile.last_updated }}</p>
+</body>
+</html>
